@@ -10,12 +10,14 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Blurb */}
-          <div className="space-y-6">
-            <img
-              src={bwLogoSrc}
-              alt="Summit Sites Black & White Logo"
-              className="w-48 h-auto"
-            />
+          <div className="space-y-6 text-center md:text-left">
+            <div className="w-48 h-48 rounded-full overflow-hidden mx-auto md:mx-0">
+              <img
+                src={bwLogoSrc}
+                alt="Summit Sites Black & White Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <p className="text-background/80 leading-relaxed">
               Professional websites for Colorado businesses. Based in Lakewood,
               serving the entire Front Range with personal service and proven
