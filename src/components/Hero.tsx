@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="lg:justify-self-end">
             <div className="relative">
               <img 
-                src="public/assets/Summit_Sites_Logo_Optimized.jpg" 
+                src="assets/Summit_Sites_Logo_Optimized.jpg" 
                 alt="Summit Sites Logo" 
                 className="w-80 h-80 object-contain drop-shadow-2xl"
               />
