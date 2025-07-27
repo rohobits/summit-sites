@@ -55,17 +55,21 @@ const Hero = () => {
             </div>
           </div>
           
-         <div className="relative flex items-center justify-center">   
-           {/* blurred gradient backdrop */}
-           <div className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent rounded-full filter blur-2xl opacity-50" />
-           {/* your logo sits on top */}
-             <img
-               src="assets/logo.png"
-               alt="Summit Sites Logo"
-               className="relative w-60 h-60 object-contain drop-shadow-xl"
-               />
-         </div>
-          </div>
+         {/* Right Logo – Option 1 */}
+        <div className="lg:justify-self-end">
+        <div className="relative flex items-center justify-center">
+        {/* blurred gradient backdrop */}
+        <div
+      className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent rounded-full filter blur-2xl opacity-50"
+      />
+      {/* logo on top */}
+      <img
+      src="assets/Summit_Sites_Logo_Optimized.jpg"
+      alt="Summit Sites Logo"
+      className="relative w-60 h-60 object-contain drop-shadow-xl"
+    />
+  </div>
+</div>
         </div>
       </div>
     </section>
