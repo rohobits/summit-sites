@@ -1,3 +1,4 @@
+// src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
@@ -26,7 +27,6 @@ const Hero = () => {
               Beautiful Websites That
               <span className="block text-accent"> Bring In Customers</span>
             </h1>
-
             <p className="text-xl text-primary-foreground/90 max-w-lg">
               Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
@@ -48,21 +48,15 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
-            <div className="flex items-center gap-2">
-              ✓ <span>Local Denver Business</span>
-            </div>
-            <div className="flex items-center gap-2">
-              ✓ <span>Done in 2 Weeks</span>
-            </div>
-            <div className="flex items-center gap-2">
-              ✓ <span>All-Inclusive Service</span>
-            </div>
+            <div className="flex items-center gap-2">✓ <span>Local Denver Business</span></div>
+            <div className="flex items-center gap-2">✓ <span>Done in 2 Weeks</span></div>
+            <div className="flex items-center gap-2">✓ <span>All-Inclusive Service</span></div>
           </div>
         </div>
 
-        {/* Right Logo – Static 150% size */}
+        {/* Right Logo – Static 150% size, no drop shadow */}
         <div className="lg:justify-self-end flex justify-center">
-          <div className="relative w-[24rem] h-[24rem] rounded-full overflow-hidden drop-shadow-2xl">
+          <div className="relative w-[24rem] h-[24rem] rounded-full overflow-hidden">
             <img
               src={logoSrc}
               alt="Summit Sites Logo"
