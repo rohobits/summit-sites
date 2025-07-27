@@ -1,8 +1,21 @@
-export default function Index() {
+import Hero from "@/components/Hero";
+import ValuePropositions from "@/components/ValuePropositions";
+import TargetIndustries from "@/components/TargetIndustries";
+import LocalEmphasis from "@/components/LocalEmphasis";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
+
+const Index = () => {
   return (
-    <div style={{ padding: "2rem", fontSize: "1.5rem", color: "black" }}>
-      <h1>Hello from Summit Sites Homepage!</h1>
-      <p>If you're seeing this, the site is rendering correctly 🎉</p>
+    <div className="min-h-screen">
+      <Hero />
+      <ValuePropositions />
+      <TargetIndustries />
+      <LocalEmphasis />
+      <CTA />
+      <Footer />
     </div>
   );
-}
+};
+
+export default Index;
