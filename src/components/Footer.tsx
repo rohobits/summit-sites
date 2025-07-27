@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-6">
             <img 
               src="public/assets/Summit_Sites_b&w.png" 
-              alt="Summit Sites Logo" 
+              alt="Summit Sites Black & White Logo" 
               className="w-48 h-auto brightness-0 invert"
             />
             <p className="text-background/80 leading-relaxed">
