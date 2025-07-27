@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
-  // will resolve to "/" in dev or "/summit-sites/" in production
+  // resolves to "/" in dev or "/summit-sites/" in prod
   const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
 
   return (
@@ -26,7 +26,6 @@ const Hero = () => {
               Beautiful Websites That
               <span className="block text-accent"> Bring In Customers</span>
             </h1>
-
             <p className="text-xl text-primary-foreground/90 max-w-lg">
               Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
@@ -54,20 +53,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Logo – Option 3, doubled size + hover-backdrop */}
+        {/* Right Logo – Option 3, 150% size + glow on hover */}
         <div className="lg:justify-self-end flex justify-center">
-          <div className="relative w-[32rem] h-[32rem] group">
-            {/* backdrop that brightens on hover */}
-            <div
-              className="absolute inset-0 rounded-full bg-white/20 opacity-50
-                         transition-opacity group-hover:opacity-95"
-            />
-            {/* your logo, scaled on hover */}
+          <div
+            className="relative w-[24rem] h-[24rem] rounded-full overflow-hidden
+                       drop-shadow-2xl transition-all group hover:group-hover:ring-8 group-hover:ring-white/50"
+          >
             <img
               src={logoSrc}
               alt="Summit Sites Logo"
-              className="relative w-full h-full object-cover rounded-full
-                         drop-shadow-2xl transition-transform group-hover:scale-105"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
