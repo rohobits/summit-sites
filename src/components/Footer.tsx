@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   // resolves to "/" in dev or "/summit-sites/" in production
@@ -8,7 +8,9 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Grid now has 3 columns at lg */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
           {/* Logo & Blurb */}
           <div className="space-y-6 text-center md:text-left">
             <div className="w-48 h-48 rounded-full overflow-hidden mx-auto md:mx-0">
@@ -60,20 +62,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Business Hours */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Business Hours</h4>
-            <div className="space-y-3 text-background/80">
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 flex-shrink-0" />
-                <div>
-                  <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-                  <p>Sat: 10:00 AM - 2:00 PM</p>
-                  <p>Sun: Closed</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Links */}
@@ -83,22 +71,13 @@ const Footer = () => {
               © 2024 Summit Sites. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-background/60">
-              <a
-                href="#"
-                className="hover:text-background transition-colors"
-              >
+              <a href="#" className="hover:text-background transition-colors">
                 Privacy Policy
               </a>
-              <a
-                href="#"
-                className="hover:text-background transition-colors"
-              >
+              <a href="#" className="hover:text-background transition-colors">
                 Terms of Service
               </a>
-              <a
-                href="#"
-                className="hover:text-background transition-colors"
-              >
+              <a href="#" className="hover:text-background transition-colors">
                 Site Map
               </a>
             </div>
