@@ -59,11 +59,11 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Get Quote
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/quote">Get Quote</Link>
             </Button>
-            <Button size="sm" className="shadow-summit">
-              Start Project
+            <Button size="sm" className="shadow-summit" asChild>
+              <Link to="/contact">Start Project</Link>
             </Button>
           </div>
 
@@ -100,11 +100,11 @@ const Navigation = () => {
 
                 {/* Mobile CTA */}
                 <div className="space-y-3 pt-6 border-t border-border">
-                  <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
-                    Get Quote
+                  <Button variant="outline" className="w-full" asChild onClick={() => setIsOpen(false)}>
+                    <Link to="/quote">Get Quote</Link>
                   </Button>
-                  <Button className="w-full shadow-summit" onClick={() => setIsOpen(false)}>
-                    Start Project
+                  <Button className="w-full shadow-summit" asChild onClick={() => setIsOpen(false)}>
+                    <Link to="/contact">Start Project</Link>
                   </Button>
                 </div>
               </div>
