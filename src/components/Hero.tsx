@@ -1,8 +1,8 @@
-// src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
+  // will resolve to "/" in dev or "/summit-sites/" in production
   const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
 
   return (
@@ -14,22 +14,25 @@ const Hero = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text (same as above) */}
+        {/* Left Text Column */}
         <div className="space-y-8">
           <div className="flex items-center gap-2 text-primary-foreground/90">
             <MapPin className="w-5 h-5" />
             <span>Proudly serving Denver &amp; the Front Range</span>
           </div>
+
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
               Beautiful Websites That
               <span className="block text-accent"> Bring In Customers</span>
             </h1>
+
             <p className="text-xl text-primary-foreground/90 max-w-lg">
               Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
             </p>
           </div>
+
           <div className="flex flex-col sm:flex-row gap-4">
             <Button variant="hero" className="group">
               Get Your Free Website Quote
@@ -43,6 +46,7 @@ const Hero = () => {
               Call (720) 555-0123
             </Button>
           </div>
+
           <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
             <div className="flex items-center gap-2">✓ <span>Local Denver Business</span></div>
             <div className="flex items-center gap-2">✓ <span>Done in 2 Weeks</span></div>
@@ -50,14 +54,20 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Logo – Option 3 */}
+        {/* Right Logo – Option 3, doubled size + hover-backdrop */}
         <div className="lg:justify-self-end flex justify-center">
-          <div className="relative w-64 h-64 rounded-full overflow-hidden
-                          drop-shadow-2xl transition-transform hover:scale-105">
+          <div className="relative w-[32rem] h-[32rem] group">
+            {/* backdrop that brightens on hover */}
+            <div
+              className="absolute inset-0 rounded-full bg-white/20 opacity-50
+                         transition-opacity group-hover:opacity-95"
+            />
+            {/* your logo, scaled on hover */}
             <img
               src={logoSrc}
               alt="Summit Sites Logo"
-              className="w-full h-full object-cover"
+              className="relative w-full h-full object-cover rounded-full
+                         drop-shadow-2xl transition-transform group-hover:scale-105"
             />
           </div>
         </div>
