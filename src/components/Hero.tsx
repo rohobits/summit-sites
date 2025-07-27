@@ -66,8 +66,8 @@ const Hero = () => {
 
           {/* ==== RIGHT LOGO ==== */}
           {/* Uncomment exactly one of the three below */}
-      {/*
-          --- Option 2: Semi-Transparent Ring Frame --- */}
+          {/*  --- Option 2: Semi-Transparent Ring Frame --- */}
+          
           <div className="lg:justify-self-end">
             <div className="flex justify-center">
               <div className="p-8 bg-white/10 rounded-full ring-4 ring-white/20 drop-shadow-lg">
