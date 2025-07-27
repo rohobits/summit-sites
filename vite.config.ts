@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/summit-sites/", // Important for GitHub Pages
+  base: "/summit-sites/",
   server: {
     host: "::",
     port: 8080,
@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
-      input: "./index.html", // Ensures correct HTML entry for production
+      input: path.resolve(__dirname, "index.html"),
     },
   },
 }));
