@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
+  // ensures correct path both locally and on GitHub Pages
+  const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
+
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -12,7 +15,8 @@ const Hero = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Text */}
+
+          {/* Left Text Column */}
           <div className="space-y-8">
             <div className="flex items-center gap-2 text-primary-foreground/90">
               <MapPin className="w-5 h-5" />
@@ -38,7 +42,6 @@ const Hero = () => {
                 Get Your Free Website Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-
               <Button
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10"
@@ -61,50 +64,53 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Logo – choose one of the three below by uncommenting it */}
+          {/* ==== RIGHT LOGO ==== */}
+          {/* Uncomment exactly one of the three below */}
 
+          
           {/* --- Option 1: Soft, Blurred Gradient Circle --- */}
-          {/*
           <div className="lg:justify-self-end">
             <div className="relative flex items-center justify-center">
               <div
-                className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent rounded-full filter blur-2xl opacity-50"
+                className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent
+                           rounded-full filter blur-2xl opacity-50"
               />
               <img
-                src="assets/Summit_Sites_Logo_Optimized.jpg"
+                src={logoSrc}
                 alt="Summit Sites Logo"
                 className="relative w-60 h-60 object-contain drop-shadow-xl"
               />
             </div>
           </div>
-          */}
-
-          {/* --- Option 2: Semi-Transparent Ring Frame --- */}
           
+
+          {/*
+          --- Option 2: Semi-Transparent Ring Frame ---
           <div className="lg:justify-self-end">
             <div className="flex justify-center">
               <div className="p-8 bg-white/10 rounded-full ring-4 ring-white/20 drop-shadow-lg">
                 <img
-                  src="assets/Summit_Sites_Logo_Optimized.jpg"
+                  src={logoSrc}
                   alt="Summit Sites Logo"
                   className="w-40 h-40 object-contain"
                 />
               </div>
             </div>
           </div>
-          
+          */}
 
-          {/* --- Option 3: Ultra-Clean with Hover Scale --- */}
           {/*
+          --- Option 3: Ultra-Clean with Hover Scale ---
           <div className="lg:justify-self-end">
             <img
-              src="assets/Summit_Sites_Logo_Optimized.jpg"
+              src={logoSrc}
               alt="Summit Sites Logo"
-              className="w-64 h-64 object-contain drop-shadow-2xl transition-transform hover:scale-105"
+              className="w-64 h-64 object-contain
+                         drop-shadow-2xl transition-transform hover:scale-105"
             />
           </div>
           */}
-          
+
         </div>
       </div>
     </section>
