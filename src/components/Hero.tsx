@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
-  // ensures correct path both locally and on GitHub Pages
   const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
 
   return (
@@ -24,19 +23,16 @@ const Hero = () => {
                 Proudly serving Denver &amp; the Front Range
               </span>
             </div>
-
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Beautiful Websites That
                 <span className="block text-accent"> Bring In Customers</span>
               </h1>
-
               <p className="text-xl text-primary-foreground/90 max-w-lg">
                 Done-for-you websites that look amazing and actually grow your
                 business. No stress, no technical headaches—just results.
               </p>
             </div>
-
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" className="group">
                 Get Your Free Website Quote
@@ -50,7 +46,6 @@ const Hero = () => {
                 Call (720) 555-0123
               </Button>
             </div>
-
             <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
               <div className="flex items-center gap-2">
                 ✓ <span>Local Denver Business</span>
@@ -66,29 +61,58 @@ const Hero = () => {
 
           {/* ==== RIGHT LOGO ==== */}
           {/* Uncomment exactly one of the three below */}
-          {/*  --- Option 2: Semi-Transparent Ring Frame --- */}
-          
-          <div className="lg:justify-self-end">
-            <div className="flex justify-center">
-              <div className="p-8 bg-white/10 rounded-full ring-4 ring-white/20 drop-shadow-lg">
+
+        
+          {/*  --- Option 1: Blurred Gradient Circle + Cropped Logo ---    */}
+          <div className="lg:justify-self-end flex justify-center">
+            <div className="relative flex items-center justify-center">
+              {/* blurred gradient backdrop */}
+              <div
+                className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent
+                           rounded-full filter blur-2xl opacity-50"
+              />
+              {/* crop to circle + drop shadow */}
+              <div className="relative w-60 h-60 rounded-full overflow-hidden drop-shadow-xl">
                 <img
                   src={logoSrc}
                   alt="Summit Sites Logo"
-                  className="w-40 h-40 object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
           </div>
+       
 
           {/*
-          --- Option 3: Ultra-Clean with Hover Scale ---
-          <div className="lg:justify-self-end">
-            <img
-              src={logoSrc}
-              alt="Summit Sites Logo"
-              className="w-64 h-64 object-contain
-                         drop-shadow-2xl transition-transform hover:scale-105"
-            />
+          --- Option 2: Ring Frame + Cropped Logo ---
+          <div className="lg:justify-self-end flex justify-center">
+            <div className="relative">
+              {/* circular ring + shadow */}
+              <div className="absolute inset-0 m-auto w-64 h-64 rounded-full
+                              ring-4 ring-white/20 drop-shadow-lg" />
+              {/* crop to circle */}
+              <div className="relative w-56 h-56 rounded-full overflow-hidden bg-white/10">
+                <img
+                  src={logoSrc}
+                  alt="Summit Sites Logo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          */}
+
+          {/*
+          --- Option 3: Ultra-Clean Circle + Hover Scale ---
+          <div className="lg:justify-self-end flex justify-center">
+            <div className="relative w-64 h-64 rounded-full overflow-hidden
+                            drop-shadow-2xl transition-transform hover:scale-105">
+              <img
+                src={logoSrc}
+                alt="Summit Sites Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           */}
 
