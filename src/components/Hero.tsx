@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text */}
+        {/* Left Text (same as above) */}
         <div className="space-y-8">
           <div className="flex items-center gap-2 text-primary-foreground/90">
             <MapPin className="w-5 h-5" />
@@ -50,22 +50,15 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Logo – Option 1 */}
+        {/* Right Logo – Option 3 */}
         <div className="lg:justify-self-end flex justify-center">
-          <div className="relative flex items-center justify-center">
-            {/* blurred gradient backdrop */}
-            <div
-              className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent
-                         rounded-full filter blur-2xl opacity-50"
+          <div className="relative w-64 h-64 rounded-full overflow-hidden
+                          drop-shadow-2xl transition-transform hover:scale-105">
+            <img
+              src={logoSrc}
+              alt="Summit Sites Logo"
+              className="w-full h-full object-cover"
             />
-            {/* circular crop + drop shadow */}
-            <div className="relative w-60 h-60 rounded-full overflow-hidden drop-shadow-xl">
-              <img
-                src={logoSrc}
-                alt="Summit Sites Logo"
-                className="w-full h-full object-cover"
-              />
-            </div>
           </div>
         </div>
       </div>
