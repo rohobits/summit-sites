@@ -64,7 +64,7 @@ const Hero = () => {
           {/* Right Logo – choose one of the three below by uncommenting it */}
 
           {/* --- Option 1: Soft, Blurred Gradient Circle --- */}
-          
+          {/*
           <div className="lg:justify-self-end">
             <div className="relative flex items-center justify-center">
               <div
@@ -77,10 +77,10 @@ const Hero = () => {
               />
             </div>
           </div>
-          
+          */}
 
           {/* --- Option 2: Semi-Transparent Ring Frame --- */}
-          {/*
+          
           <div className="lg:justify-self-end">
             <div className="flex justify-center">
               <div className="p-8 bg-white/10 rounded-full ring-4 ring-white/20 drop-shadow-lg">
@@ -92,7 +92,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          */}
+          
 
           {/* --- Option 3: Ultra-Clean with Hover Scale --- */}
           {/*
