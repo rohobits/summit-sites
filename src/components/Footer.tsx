@@ -8,23 +8,18 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Grid now has 3 columns at lg */}
+        {/* 3-column grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           
-          {/* Logo & Blurb */}
-          <div className="space-y-6 text-center md:text-left">
-            <div className="w-48 h-48 rounded-full overflow-hidden mx-auto md:mx-0">
+          {/* Logo only */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="w-48 h-48 rounded-full overflow-hidden">
               <img
                 src={bwLogoSrc}
-                alt="Summit Sites Black & White Logo"
+                alt="Summit Sites Logo"
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-background/80 leading-relaxed">
-              Professional websites for Colorado businesses. Based in Lakewood,
-              serving the entire Front Range with personal service and proven
-              results.
-            </p>
           </div>
 
           {/* Contact Info */}
@@ -61,7 +56,6 @@ const Footer = () => {
               <li>• Ongoing Support</li>
             </ul>
           </div>
-
         </div>
 
         {/* Bottom Links */}
