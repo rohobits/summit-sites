@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-6">
             <img 
-              src="/lovable-uploads/9968883d-6f44-43bd-83d8-1267b61f084d.png" 
+              src="/assets/Summit_Sites_Logo_Optimized.jpg" 
               alt="Summit Sites Logo" 
               className="w-48 h-auto brightness-0 invert"
             />
