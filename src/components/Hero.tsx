@@ -66,26 +66,8 @@ const Hero = () => {
 
           {/* ==== RIGHT LOGO ==== */}
           {/* Uncomment exactly one of the three below */}
-
-          
-          {/* --- Option 1: Soft, Blurred Gradient Circle --- */}
-          <div className="lg:justify-self-end">
-            <div className="relative flex items-center justify-center">
-              <div
-                className="absolute w-72 h-72 bg-gradient-to-br from-primary to-accent
-                           rounded-full filter blur-2xl opacity-50"
-              />
-              <img
-                src={logoSrc}
-                alt="Summit Sites Logo"
-                className="relative w-60 h-60 object-contain drop-shadow-xl"
-              />
-            </div>
-          </div>
-          
-
-          {/*
-          --- Option 2: Semi-Transparent Ring Frame ---
+      {/*
+          --- Option 2: Semi-Transparent Ring Frame --- */}
           <div className="lg:justify-self-end">
             <div className="flex justify-center">
               <div className="p-8 bg-white/10 rounded-full ring-4 ring-white/20 drop-shadow-lg">
@@ -97,7 +79,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          */}
 
           {/*
           --- Option 3: Ultra-Clean with Hover Scale ---
