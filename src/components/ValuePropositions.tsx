@@ -13,37 +13,45 @@ const valueProps = [
   {
     icon: CheckCircle,
     title: "Done-For-You, Stress-Free Setup",
-    description: "We handle everything from start to launch—design, content, hosting, SEO, and edits—so you don't have to. Designed for busy owners and directors who need a beautiful website without the overwhelm."
+    description:
+      "We handle everything from start to launch—design, content, hosting, SEO, and edits—so you don't have to. Designed for busy owners and directors who need a beautiful website without the overwhelm."
   },
   {
     icon: Target,
     title: "Lead-Generating Websites That Work",
-    description: "Our websites don't just look great—they're built to bring in new customers through forms, booking widgets, and SEO. Conversion-focused layouts drive calls, signups, and sales automatically."
+    description:
+      "Our websites don't just look great—they're built to bring in new customers through forms, booking widgets, and SEO. Conversion-focused layouts drive calls, signups, and sales automatically."
   },
-    {
+  {
     icon: Heart,
     title: "Local Business with a Personal Touch",
-    description: "We're based in Lakewood, CO, and we specialize in working with small businesses across the Front Range. You'll always talk to a real person who knows your name—and your business."
-  }
-  {/*  {
-    icon: Puzzle,
-    title: "Template-Powered = Fast + Affordable",
-    description: "We use a curated set of high-performing templates tailored to your industry to deliver professional results quickly and affordably. No bloated agency fees or long timelines."
-  } */},
+    description:
+      "We're based in Lakewood, CO, and we specialize in working with small businesses across the Front Range. You'll always talk to a real person who knows your name—and your business."
+  },
+  // If you want to re-enable the “Template-Powered” prop, uncomment below:
+  // {
+  //   icon: Puzzle,
+  //   title: "Template-Powered = Fast + Affordable",
+  //   description:
+  //     "We use a curated set of high-performing templates tailored to your industry to deliver professional results quickly and affordably. No bloated agency fees or long timelines."
+  // },
   {
     icon: Shield,
     title: "Hosting, Security & Maintenance Included",
-    description: "Every site includes secure hosting, SSL encryption, and ongoing maintenance. No hidden fees. No worries about updates, outages, or broken pages."
+    description:
+      "Every site includes secure hosting, SSL encryption, and ongoing maintenance. No hidden fees. No worries about updates, outages, or broken pages."
   },
   {
     icon: TrendingUp,
     title: "Built-In SEO & Performance Tracking",
-    description: "Our sites are optimized for local search from day one. We'll track performance and deliver regular reports so you see your ROI clearly."
+    description:
+      "Our sites are optimized for local search from day one. We'll track performance and deliver regular reports so you see your ROI clearly."
   },
   {
     icon: RefreshCw,
     title: "Ongoing Edits & Priority Support",
-    description: "Monthly plan includes hours of hands-on updates, content swaps, and quick fixes—so your site stays fresh. Need changes? Just email us. We'll handle it."
+    description:
+      "Monthly plan includes hours of hands-on updates, content swaps, and quick fixes—so your site stays fresh. Need changes? Just email us. We'll handle it."
   },
 ];
 
@@ -56,17 +64,17 @@ const ValuePropositions = () => {
             Why Choose Summit Sites?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're not just another web design agency. We're your local Colorado partners 
+            We're not just another web design agency. We're your local Colorado partners
             who understand what it takes to grow a business in the Front Range.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {valueProps.map((prop, index) => {
             const Icon = prop.icon;
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover:shadow-card-summit transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50"
               >
                 <CardContent className="p-8">
