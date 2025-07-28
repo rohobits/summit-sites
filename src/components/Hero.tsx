@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
-  // resolves to "/" in dev or "/summit-sites/" in production
-  const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
+  // ← UPDATED: always resolve the absolute path to /assets/... via BASE_URL
+  const logoSrc = new URL(
+    "assets/Summit_Sites_Logo_Optimized.jpg",
+    import.meta.env.BASE_URL
+  ).href;
 
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
@@ -48,13 +51,19 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
-            <div className="flex items-center gap-2">✓ <span>Local Denver Business</span></div>
-            <div className="flex items-center gap-2">✓ <span>Done in 2 Weeks</span></div>
-            <div className="flex items-center gap-2">✓ <span>All-Inclusive Service</span></div>
+            <div className="flex items-center gap-2">
+              ✓ <span>Local Denver Business</span>
+            </div>
+            <div className="flex items-center gap-2">
+              ✓ <span>Done in 2 Weeks</span>
+            </div>
+            <div className="flex items-center gap-2">
+              ✓ <span>All-Inclusive Service</span>
+            </div>
           </div>
         </div>
 
-        {/* Right Logo – Static 150% size, no drop shadow */}
+        {/* Right Logo – static size, no drop shadow */}
         <div className="lg:justify-self-end flex justify-center">
           <div className="relative w-[24rem] h-[24rem] rounded-full overflow-hidden">
             <img
