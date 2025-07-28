@@ -3,15 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 
 const Hero = () => {
-  // Build an absolute URL that always resolves,
-  // even during client-side routing:
-  const logoPath = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
-
-  // If we're in the browser, prepend the origin so new URL() has a valid base:
-  const logoSrc =
-    typeof window !== "undefined"
-      ? new URL(logoPath, window.location.origin).href
-      : logoPath;
+  // Build the absolute URL into public/assets via import.meta.url:
+  const logoSrc = new URL(
+    `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`,
+    import.meta.url
+  ).href;
 
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
