@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+// src/components/LocalEmphasis.tsx
 import { MapPin, Coffee, Users, Award } from "lucide-react";
 
 const LocalEmphasis = () => {
@@ -10,21 +10,23 @@ const LocalEmphasis = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <MapPin className="w-8 h-8 text-primary" />
-                <span className="text-primary font-semibold text-lg">Based in Lakewood, CO</span>
+                <span className="text-primary font-semibold text-lg">
+                  Based in Lakewood, CO
+                </span>
               </div>
-              
+
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
                 Your Local Colorado
                 <span className="block text-primary">Web Design Partners</span>
               </h2>
-              
+
               <p className="text-xl text-muted-foreground leading-relaxed">
                 We're not a faceless agency from across the country. We're your neighbors who 
                 understand the Colorado market, the local competition, and what it takes to succeed 
                 in the Front Range business community.
               </p>
             </div>
-            
+
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
@@ -37,7 +39,7 @@ const LocalEmphasis = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
                   <Users className="w-6 h-6 text-accent-foreground" />
@@ -49,7 +51,7 @@ const LocalEmphasis = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-accent-foreground" />
@@ -61,7 +63,7 @@ const LocalEmphasis = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-accent-foreground" />
@@ -74,14 +76,8 @@ const LocalEmphasis = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="pt-4">
-              <Button variant="summit" size="lg">
-                Schedule Your Free Consultation
-              </Button>
-            </div>
           </div>
-          
+
           <div className="lg:order-first">
             <div className="relative">
               <div className="bg-gradient-card rounded-2xl p-8 shadow-summit">
@@ -89,11 +85,11 @@ const LocalEmphasis = () => {
                   <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto">
                     <MapPin className="w-12 h-12 text-primary-foreground" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-foreground">
                     Serving the Front Range
                   </h3>
-                  
+
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="space-y-2">
                       <p className="font-semibold text-foreground">Denver Metro</p>
@@ -105,7 +101,7 @@ const LocalEmphasis = () => {
                         <li>• Westminster</li>
                       </ul>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <p className="font-semibold text-foreground">Surrounding Areas</p>
                       <ul className="space-y-1 text-muted-foreground">
@@ -117,12 +113,7 @@ const LocalEmphasis = () => {
                       </ul>
                     </div>
                   </div>
-                  
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-muted-foreground text-sm">
-                      <strong className="text-foreground">Call or Text:</strong> (720) 555-0123
-                    </p>
-                  </div>
+                  {/* Removed phone CTA — keeps this section purely trust-building */}
                 </div>
               </div>
             </div>
