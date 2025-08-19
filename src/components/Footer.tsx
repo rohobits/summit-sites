@@ -1,5 +1,5 @@
 // src/components/Footer.tsx
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 
 const Footer = () => {
   // resolves to "/" in dev or "/summit-sites/" in production
@@ -26,10 +26,6 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contact Info</h4>
             <div className="space-y-3 text-background/80">
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 flex-shrink-0" />
-                <span>(720) 555-0123</span>
-              </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <span>hello@summitsites.co</span>
