@@ -1,8 +1,9 @@
+// src/components/Navigation.tsx
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Mountain } from "lucide-react";
+import { Menu, Mountain } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,12 +59,9 @@ const Navigation = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" asChild>
-              <Link to="/quote">Get Quote</Link>
-            </Button>
+          <div className="hidden md:flex items-center">
             <Button size="sm" className="shadow-summit" asChild>
-              <Link to="/contact">Start Project</Link>
+              <Link to="/quote">Get Your Free Website Quote</Link>
             </Button>
           </div>
 
@@ -99,12 +97,9 @@ const Navigation = () => {
                 </nav>
 
                 {/* Mobile CTA */}
-                <div className="space-y-3 pt-6 border-t border-border">
-                  <Button variant="outline" className="w-full" asChild onClick={() => setIsOpen(false)}>
-                    <Link to="/quote">Get Quote</Link>
-                  </Button>
+                <div className="pt-6 border-t border-border">
                   <Button className="w-full shadow-summit" asChild onClick={() => setIsOpen(false)}>
-                    <Link to="/contact">Start Project</Link>
+                    <Link to="/quote">Get Your Free Website Quote</Link>
                   </Button>
                 </div>
               </div>
