@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// src/App.tsx
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "./components/ui/tooltip";
 import { Toaster } from "./components/ui/toaster";
@@ -8,7 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
+import Quote from "./pages/Quote"; // renamed from Contact.tsx
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,8 +26,14 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/quote" element={<Contact />} />
+          
+          {/* Primary CTA Route */}
+          <Route path="/quote" element={<Quote />} />
+
+          {/* Redirect /contact → /quote */}
+          <Route path="/contact" element={<Navigate to="/quote" replace />} />
+
+          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
