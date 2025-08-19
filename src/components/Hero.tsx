@@ -15,8 +15,19 @@ const Hero = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text Column */}
-        <div className="space-y-8">
+        {/* Right Logo on desktop, first on mobile */}
+        <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
+            <img
+              src={logoSrc}
+              alt="Summit Sites Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Left Text Column on desktop, second on mobile */}
+        <div className="order-2 lg:order-1 space-y-8">
           <div className="flex items-center gap-2 text-primary-foreground/90">
             <MapPin className="w-5 h-5" />
             <span>Proudly serving Denver &amp; the Front Range</span>
@@ -50,17 +61,6 @@ const Hero = () => {
             <div className="flex items-center gap-2">
               ✓ <span>All-Inclusive Service</span>
             </div>
-          </div>
-        </div>
-
-        {/* Right Logo – static size, no drop shadow */}
-        <div className="lg:justify-self-end flex justify-center">
-          <div className="relative w-[24rem] h-[24rem] rounded-full overflow-hidden">
-            <img
-              src={logoSrc}
-              alt="Summit Sites Logo"
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       </div>
