@@ -1,6 +1,6 @@
 // src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 
 const Hero = () => {
   // relative to the <base href> in index.html
@@ -37,13 +37,6 @@ const Hero = () => {
             <Button variant="hero" className="group">
               Get Your Free Website Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10"
-            >
-              <Phone className="w-4 h-4" />
-              Call (720) 555-0123
             </Button>
           </div>
 
