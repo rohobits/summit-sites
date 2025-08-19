@@ -47,7 +47,7 @@ const CTA = () => {
               size="lg"
               className="group bg-accent text-accent-foreground hover:bg-accent/90"
             >
-              Get Your Free Website Quote Today
+              Get Your Free Website Quote
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
