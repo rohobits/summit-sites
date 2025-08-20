@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="space-y-3 text-background/80">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>hello@summitsites.co</span>
+                <span>support@summitsites.co</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -50,6 +50,7 @@ const Footer = () => {
               <li>• Hosting & Maintenance</li>
               <li>• Content Creation</li>
               <li>• Ongoing Support</li>
+              <li>• Done-for-you Newsletters</li>
             </ul>
           </div>
         </div>
@@ -58,7 +59,7 @@ const Footer = () => {
         <div className="border-t border-background/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-background/60 text-sm">
-              © 2024 Summit Sites. All rights reserved.
+              © 2025 Summit Sites. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-background/60">
               <a href="#" className="hover:text-background transition-colors">
