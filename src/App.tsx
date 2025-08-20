@@ -7,8 +7,8 @@ import { Toaster as Sonner } from "./components/ui/sonner";
 import Navigation from "./components/Navigation";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Portfolio from "./pages/Portfolio";
-import Testimonials from "./pages/Testimonials";
+// import Portfolio from "./pages/Portfolio";      // keep file, not imported -> not bundled
+// import Testimonials from "./pages/Testimonials"; // keep file, not imported -> not bundled
 import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
 
@@ -19,17 +19,24 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* HashRouter works on GitHub Pages without custom rewrites */}
+
       <HashRouter>
         <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+
+          {/* Primary CTA route */}
           <Route path="/quote" element={<Quote />} />
-          {/* Redirect old /contact to /quote */}
+
+          {/* Legacy redirect */}
           <Route path="/contact" element={<Navigate to="/quote" replace />} />
+
+          {/* Draft pages disabled: redirect to home (not live) */}
+          <Route path="/portfolio" element={<Navigate to="/" replace />} />
+          <Route path="/testimonials" element={<Navigate to="/" replace />} />
+
+          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
