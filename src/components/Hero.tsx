@@ -1,6 +1,7 @@
 // src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   // relative to the <base href> in index.html
@@ -45,9 +46,11 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" className="group">
-              Get Your Free Website Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="hero" className="group" asChild>
+              <Link to="/quote">
+                Get Your Free Website Quote
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </div>
 
