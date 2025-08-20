@@ -80,8 +80,8 @@ const Quote = () => {
       description:
         "We'll get back to you within 24 hours with a detailed proposal.",
     });
-    // TODO: send to your backend / form handler, then optionally reset:
-    // setFormData({ ...initialState });
+    // TODO: send to backend then optionally reset form
+    // setFormData({ ...initialState })
   };
 
   return (
@@ -249,7 +249,9 @@ const Quote = () => {
                           <SelectItem value="2weeks">Within 2 weeks</SelectItem>
                           <SelectItem value="month">Within a month</SelectItem>
                           <SelectItem value="2months">1-2 months</SelectItem>
-                          <SelectItem value="flexible">I&apos;m flexible</SelectItem>
+                          <SelectItem value="flexible">
+                            I&apos;m flexible
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -270,7 +272,9 @@ const Quote = () => {
                           <SelectItem value="2k-5k">$2,000 - $5,000</SelectItem>
                           <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
                           <SelectItem value="10k+">$10,000+</SelectItem>
-                          <SelectItem value="discuss">Let&apos;s discuss</SelectItem>
+                          <SelectItem value="discuss">
+                            Let&apos;s discuss
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -291,7 +295,10 @@ const Quote = () => {
                               handleServiceChange(service, !!checked)
                             }
                           />
-                          <label htmlFor={service} className="text-sm text-foreground">
+                          <label
+                            htmlFor={service}
+                            className="text-sm text-foreground"
+                          >
                             {service}
                           </label>
                         </div>
@@ -402,4 +409,40 @@ const Quote = () => {
                     4
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">Launch &
+                    <div className="font-medium text-foreground">Launch &amp; Support</div>
+                    <div className="text-sm text-muted-foreground">
+                      Go live with ongoing help
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Guarantee Card */}
+            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <CardContent className="p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                  <div className="font-semibold text-foreground">Our Guarantee</div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  If you&apos;re not completely satisfied with your website,
+                  we&apos;ll work with you until you love it — or refund your money.
+                </p>
+                <div className="text-xs text-primary font-medium">
+                  ✓ 30-day satisfaction guarantee
+                  <br />
+                  ✓ Free revisions during development
+                  <br />
+                  ✓ 24-hour response time
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Quote;
