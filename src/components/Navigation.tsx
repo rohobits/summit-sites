@@ -11,11 +11,12 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Hiding Portfolio & Testimonials for now — keep only live pages here
   const navigationItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/testimonials", label: "Testimonials" },
+    // { href: "/portfolio", label: "Portfolio" },     // hidden
+    // { href: "/testimonials", label: "Testimonials"} // hidden
   ];
 
   const NavLinks = ({ mobile = false, onLinkClick = () => {} }) => (
@@ -26,9 +27,7 @@ const Navigation = () => {
           to={item.href}
           onClick={onLinkClick}
           className={`${
-            mobile 
-              ? "block px-4 py-3 text-lg font-medium" 
-              : "px-4 py-2 text-sm font-medium"
+            mobile ? "block px-4 py-3 text-lg font-medium" : "px-4 py-2 text-sm font-medium"
           } transition-colors duration-200 rounded-md ${
             isActive(item.href)
               ? "text-primary bg-primary/10"
@@ -77,8 +76,8 @@ const Navigation = () => {
               <div className="flex flex-col h-full">
                 {/* Mobile Header */}
                 <div className="flex items-center justify-between pb-6 border-b border-border">
-                  <Link 
-                    to="/" 
+                  <Link
+                    to="/"
                     className="flex items-center space-x-2"
                     onClick={() => setIsOpen(false)}
                   >
