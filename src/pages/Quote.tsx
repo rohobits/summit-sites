@@ -85,9 +85,11 @@ const Quote = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-summit-cream to-background pt-20">
+    {/* ↓ Reduced from pt-20 (5rem) to pt-16 (4rem) to match header height */}
+    <div className="min-h-screen bg-gradient-to-br from-background via-summit-cream to-background pt-16">
       {/* Hero Section */}
-      <section className="py-16 px-4">
+      {/* ↓ Was py-16. Now tighter top/bottom: pt-8 md:pt-10 and pb-12 md:pb-16 */}
+      <section className="px-4 pt-8 pb-12 md:pt-10 md:pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <Badge variant="secondary" className="mb-4">
             <Zap className="w-4 h-4 mr-2" />
@@ -355,10 +357,6 @@ const Quote = () => {
                   <MapPin className="w-4 h-4 text-primary" />
                   <span className="text-foreground">Lakewood, CO 80228</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="w-4 h-4 text-primary" />
-                  <span className="text-foreground">Mon–Fri 9AM–6PM MT</span>
-                </div>
               </CardContent>
             </Card>
 
@@ -383,66 +381,4 @@ const Quote = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold mt-0.5">
-                    2
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Custom Proposal</div>
-                    <div className="text-sm text-muted-foreground">
-                      Detailed quote with timeline
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold mt-0.5">
-                    3
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Design &amp; Build</div>
-                    <div className="text-sm text-muted-foreground">
-                      We handle everything
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold mt-0.5">
-                    4
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">Launch &amp; Support</div>
-                    <div className="text-sm text-muted-foreground">
-                      Go live with ongoing help
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Guarantee Card */}
-            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <CheckCircle className="w-6 h-6 text-primary" />
-                  <div className="font-semibold text-foreground">Our Guarantee</div>
-                </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  If you&apos;re not completely satisfied with your website,
-                  we&apos;ll work with you until you love it — or refund your money.
-                </p>
-                <div className="text-xs text-primary font-medium">
-                  ✓ 30-day satisfaction guarantee
-                  <br />
-                  ✓ Free revisions during development
-                  <br />
-                  ✓ 24-hour response time
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Quote;
+                  <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs f
