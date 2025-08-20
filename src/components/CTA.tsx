@@ -1,6 +1,7 @@
 // src/components/CTA.tsx
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -12,13 +13,13 @@ const CTA = () => {
           </h2>
           
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-            Let's build you a website that works as hard as you do. Get started with 
+            Let&apos;s build you a website that works as hard as you do. Get started with 
             your free consultation and see how we can help your Colorado business thrive online.
           </p>
           
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-white">
-              What You'll Get in Your Free Consultation:
+              What You&apos;ll Get in Your Free Consultation:
             </h3>
             
             <div className="grid sm:grid-cols-2 gap-4">
@@ -46,9 +47,12 @@ const CTA = () => {
               variant="hero"
               size="lg"
               className="group bg-accent text-accent-foreground hover:bg-accent/90"
+              asChild
             >
-              Get Your Free Website Quote
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Link to="/quote">
+                Get Your Free Website Quote
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
             
             <p className="text-sm text-primary-foreground/70">
