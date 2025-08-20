@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",                       // for custom domain (base '/')
-    "build:gh": "vite build --mode github-pages",// for GitHub Pages (base '/summit-sites/')
+    "build": "vite build",                       // for custom domain (base '/') //
+    "build:gh": "vite build --mode github-pages",// for GitHub Pages (base '/summit-sites/') // 
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
