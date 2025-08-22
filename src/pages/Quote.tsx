@@ -17,28 +17,49 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   CheckCircle,
   Zap,
   Users,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  business: string;
+  industry: string;
+  location: string;
+  projectType: string; // reserved for future use
+  timeline: string;
+  budget: string;
+  message: string;
+  services: string[];
+  honeypot?: string; // anti-bot
+};
+
+// ✅ Your live Formspree endpoint
+const FORM_ENDPOINT = "https://formspree.io/f/xblknglw";
+
+const initialForm: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+  business: "",
+  industry: "",
+  location: "",
+  projectType: "",
+  timeline: "",
+  budget: "",
+  message: "",
+  services: [],
+  honeypot: "",
+};
+
 const Quote = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    business: "",
-    industry: "",
-    location: "",
-    projectType: "",
-    timeline: "",
-    budget: "",
-    message: "",
-    services: [] as string[],
-  });
+  const [formData, setFormData] = useState<FormData>(initialForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const industries = [
     "Childcare Centers",
@@ -73,15 +94,71 @@ const Quote = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Quote Request Submitted!",
-      description:
-        "We'll get back to you within 24 hours with a detailed proposal.",
-    });
-    // TODO: send to backend then optionally reset form
-    // setFormData({ ...initialState })
+
+    if (!formData.name || !formData.email || !formData.business) {
+      toast({
+        title: "Missing required fields",
+        description: "Please fill in your name, email, and business name.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          business: formData.business,
+          industry: formData.industry,
+          location: formData.location,
+          timeline: formData.timeline,
+          budget: formData.budget,
+          message: formData.message,
+          services: formData.services.join(", "),
+          _gotcha: formData.honeypot ?? "",
+          _subject: `New Quote Request from ${formData.name} (${formData.business})`,
+          // _redirect: `${window.location.origin}/thanks`, // optional
+        }),
+      });
+
+      if (res.ok) {
+        setFormData(initialForm);
+        toast({
+          title: "Quote request submitted!",
+          description: "We’ll get back to you within 24 hours with next steps.",
+        });
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const errMsg =
+          data?.errors?.[0]?.message ||
+          "There was a problem sending your request. Please try again.";
+        toast({
+          title: "Submission failed",
+          description: errMsg,
+          variant: "destructive",
+        });
+      }
+    } catch {
+      toast({
+        title: "Network error",
+        description:
+          "We couldn’t reach the server. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -118,6 +195,22 @@ const Quote = () => {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot (hidden) */}
+                  <input
+                    type="text"
+                    name="company_website"
+                    value={formData.honeypot}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        honeypot: e.target.value,
+                      }))
+                    }
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   {/* Basic Info */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -195,6 +288,7 @@ const Quote = () => {
                         Industry *
                       </label>
                       <Select
+                        value={formData.industry}
                         onValueChange={(value) =>
                           setFormData((prev) => ({ ...prev, industry: value }))
                         }
@@ -235,6 +329,7 @@ const Quote = () => {
                         Timeline *
                       </label>
                       <Select
+                        value={formData.timeline}
                         onValueChange={(value) =>
                           setFormData((prev) => ({ ...prev, timeline: value }))
                         }
@@ -260,6 +355,7 @@ const Quote = () => {
                         Budget Range
                       </label>
                       <Select
+                        value={formData.budget}
                         onValueChange={(value) =>
                           setFormData((prev) => ({ ...prev, budget: value }))
                         }
@@ -324,8 +420,13 @@ const Quote = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full shadow-summit">
-                    Get My Free Website Quote
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full shadow-summit"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Get My Free Website Quote"}
                   </Button>
                 </form>
               </CardContent>
