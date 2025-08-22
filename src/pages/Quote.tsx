@@ -473,16 +473,8 @@ const Quote = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span className="text-foreground">(720) 555-SITE</span>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-foreground">hello@summitsites.co</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span className="text-foreground">Lakewood, CO 80228</span>
+                  <span className="text-foreground">support@summitsites.co</span>
                 </div>
               </CardContent>
             </Card>
