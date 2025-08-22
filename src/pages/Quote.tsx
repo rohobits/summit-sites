@@ -381,10 +381,9 @@ const Quote = () => {
                           <SelectValue placeholder="Select budget range" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="under2k">Under $2,000</SelectItem>
-                          <SelectItem value="2k-5k">$2,000 - $5,000</SelectItem>
-                          <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                          <SelectItem value="10k+">$10,000+</SelectItem>
+                          <SelectItem value="450">Starting at $450</SelectItem>
+                          <SelectItem value="500-1000">$500 - $1,000</SelectItem>
+                          <SelectItem value="1000+">$1,000+</SelectItem>
                           <SelectItem value="discuss">
                             Let&apos;s discuss
                           </SelectItem>
