@@ -1,5 +1,6 @@
 // src/pages/Quote.tsx
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ use navigate with HashRouter
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,15 +31,15 @@ type FormData = {
   business: string;
   industry: string;
   location: string;
-  projectType: string;
+  projectType: string; // reserved for future use
   timeline: string;
   budget: string;
   message: string;
   services: string[];
-  honeypot?: string;
+  honeypot?: string; // anti-bot
 };
 
-// Your live Formspree endpoint
+// ✅ Your live Formspree endpoint
 const FORM_ENDPOINT = "https://formspree.io/f/xblknglw";
 
 const initialForm: FormData = {
@@ -58,6 +59,7 @@ const initialForm: FormData = {
 
 const Quote = () => {
   const { toast } = useToast();
+  const navigate = useNavigate(); // ✅
   const [formData, setFormData] = useState<FormData>(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -128,23 +130,20 @@ const Quote = () => {
           services: formData.services.join(", "),
           _gotcha: formData.honeypot ?? "",
           _subject: `New Quote Request from ${formData.name} (${formData.business})`,
-          // _redirect: `${window.location.origin}/thanks`, // not used for fetch-based submissions
         }),
       });
 
       if (res.ok) {
-        // optional toast (it will flash before navigating)
+        // Optional toast (briefly appears before navigation)
         toast({
           title: "Quote request submitted!",
           description: "Redirecting to confirmation…",
         });
 
-        // Reset local state
         setFormData(initialForm);
 
-        // ✅ Client-side redirect (works on GitHub Pages subpaths)
-        const thanksPath = `${import.meta.env.BASE_URL}thanks`;
-        window.location.assign(thanksPath);
+        // ✅ With HashRouter, this becomes #/thanks
+        navigate("/thanks", { replace: true });
       } else {
         const data = await res.json().catch(() => ({}));
         const errMsg =
@@ -304,7 +303,18 @@ const Quote = () => {
                           <SelectValue placeholder="Select your industry" />
                         </SelectTrigger>
                         <SelectContent>
-                          {industries.map((industry) => (
+                          {[
+                            "Childcare Centers",
+                            "Ski & Bike Retail",
+                            "Professional Services",
+                            "Health & Wellness",
+                            "Specialty Retail",
+                            "Education & Enrichment",
+                            "Home & Property Services",
+                            "Event & Party Services",
+                            "Non-profits & Associations",
+                            "Other",
+                          ].map((industry) => (
                             <SelectItem key={industry} value={industry}>
                               {industry}
                             </SelectItem>
@@ -389,19 +399,30 @@ const Quote = () => {
                       Services Needed (select all that apply)
                     </label>
                     <div className="grid md:grid-cols-2 gap-3">
-                      {services.map((service) => (
+                      {[
+                        "New Website Design",
+                        "Website Redesign",
+                        "E-commerce Setup",
+                        "Booking System",
+                        "SEO Optimization",
+                        "Ongoing Maintenance",
+                        "Content Creation",
+                        "Photography",
+                      ].map((service) => (
                         <div key={service} className="flex items-center space-x-2">
                           <Checkbox
                             id={service}
                             checked={formData.services.includes(service)}
                             onCheckedChange={(checked) =>
-                              handleServiceChange(service, !!checked)
+                              setFormData((prev) => ({
+                                ...prev,
+                                services: checked
+                                  ? [...prev.services, service]
+                                  : prev.services.filter((s) => s !== service),
+                              }))
                             }
                           />
-                          <label
-                            htmlFor={service}
-                            className="text-sm text-foreground"
-                          >
+                          <label htmlFor={service} className="text-sm text-foreground">
                             {service}
                           </label>
                         </div>
