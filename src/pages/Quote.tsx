@@ -30,15 +30,15 @@ type FormData = {
   business: string;
   industry: string;
   location: string;
-  projectType: string; // reserved for future use
+  projectType: string;
   timeline: string;
   budget: string;
   message: string;
   services: string[];
-  honeypot?: string; // anti-bot
+  honeypot?: string;
 };
 
-// ✅ Your live Formspree endpoint
+// Your live Formspree endpoint
 const FORM_ENDPOINT = "https://formspree.io/f/xblknglw";
 
 const initialForm: FormData = {
@@ -128,16 +128,23 @@ const Quote = () => {
           services: formData.services.join(", "),
           _gotcha: formData.honeypot ?? "",
           _subject: `New Quote Request from ${formData.name} (${formData.business})`,
-          _redirect: `${window.location.origin}/thanks`,
+          // _redirect: `${window.location.origin}/thanks`, // not used for fetch-based submissions
         }),
       });
 
       if (res.ok) {
-        setFormData(initialForm);
+        // optional toast (it will flash before navigating)
         toast({
           title: "Quote request submitted!",
-          description: "We’ll get back to you within 24 hours with next steps.",
+          description: "Redirecting to confirmation…",
         });
+
+        // Reset local state
+        setFormData(initialForm);
+
+        // ✅ Client-side redirect (works on GitHub Pages subpaths)
+        const thanksPath = `${import.meta.env.BASE_URL}thanks`;
+        window.location.assign(thanksPath);
       } else {
         const data = await res.json().catch(() => ({}));
         const errMsg =
