@@ -128,7 +128,7 @@ const Quote = () => {
           services: formData.services.join(", "),
           _gotcha: formData.honeypot ?? "",
           _subject: `New Quote Request from ${formData.name} (${formData.business})`,
-          // _redirect: `${window.location.origin}/thanks`, // optional
+          _redirect: `${window.location.origin}/thanks`,
         }),
       });
 
