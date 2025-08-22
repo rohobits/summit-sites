@@ -12,6 +12,7 @@ import About from "./pages/About";
 // import Testimonials from "./pages/Testimonials"; // hidden for now
 import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
+import Thanks from "./pages/Thanks"; // ✅ add this
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,9 @@ const App = () => (
 
           {/* Primary CTA Route */}
           <Route path="/quote" element={<Quote />} />
+
+          {/* ✅ Thank-you route */}
+          <Route path="/thanks" element={<Thanks />} />
 
           {/* Legacy redirect */}
           <Route path="/contact" element={<Navigate to="/quote" replace />} />
