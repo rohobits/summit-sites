@@ -29,30 +29,26 @@ const Hero = () => {
 
         {/* Left Text Column on desktop, second on mobile */}
         <div className="order-2 lg:order-1 space-y-8">
+          {/* Location pill */}
           <div className="flex items-center gap-2 text-primary-foreground/90">
             <MapPin className="w-5 h-5" />
             <span>Proudly serving Denver &amp; the Front Range</span>
           </div>
 
           <div className="space-y-6">
-            {/* Main headline (kept as you had it) */}
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Your Local Colorado
-              <span className="block text-accent"> Web Design Partners</span>
-            </h1>
-
-            {/* Hero strapline with controlled wrapping */}
-            <div className="text-4xl lg:text-5xl font-semibold leading-tight">
-              <span className="text-primary-foreground">
-                Beautiful Websites
-              </span>
-              {/* Force a clean break on sm+ so it looks intentional */}
+            {/* >>> Main product-focused headline <<< */}
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+              <span className="text-primary-foreground">Beautiful Websites</span>
               <br className="hidden sm:block" />
               <span className="text-primary-foreground">
-                {/* Keep “That Bring” together so “That” never hangs alone */}
                 {"That\u00A0Bring"} In Customers.
               </span>
-            </div>
+            </h1>
+
+            {/* Supporting identity subline (smaller) */}
+            <p className="text-xl lg:text-2xl text-accent font-semibold">
+              Your Local Colorado Web Design Partners
+            </p>
 
             {/* Supporting paragraph */}
             <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl">
