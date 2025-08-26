@@ -16,8 +16,8 @@ const LocalEmphasis = () => {
               </div>
 
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-                Your Local Colorado
-                <span className="block text-primary">Web Design Partners</span>
+                Your Local
+                <span className="block text-primary">Advantage</span>
               </h2>
 
               <p className="text-xl text-muted-foreground leading-relaxed">
