@@ -76,6 +76,7 @@ const Quote = () => {
     "Other",
   ];
 
+  // (Not directly used in the UI map below, but kept for consistency)
   const services = [
     "New Website Design",
     "Website Redesign",
@@ -85,6 +86,7 @@ const Quote = () => {
     "Ongoing Maintenance",
     "Content Creation",
     "Photography",
+    "Done-for-you Newsletter",
   ];
 
   const handleServiceChange = (service: string, checked: boolean) => {
@@ -407,6 +409,7 @@ const Quote = () => {
                         "Ongoing Maintenance",
                         "Content Creation",
                         "Photography",
+                        "Done-for-you Newsletter",
                       ].map((service) => (
                         <div key={service} className="flex items-center space-x-2">
                           <Checkbox
