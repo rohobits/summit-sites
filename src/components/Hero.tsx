@@ -36,11 +36,11 @@ const Hero = () => {
 
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Your Local Colorado
-              <span className="block text-accent"> Web Design Partners</span>
+              Beautiful Websites That
+              <span className="block text-accent"> Bring In Customers. </span>
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-lg">
-              Beautiful Websites That Bring In Customers. Done-for-you websites that look amazing and actually grow your
+             Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
             </p>
           </div>
