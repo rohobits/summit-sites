@@ -35,12 +35,28 @@ const Hero = () => {
           </div>
 
           <div className="space-y-6">
+            {/* Main headline (kept as you had it) */}
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-              Beautiful Websites That
-              <span className="block text-accent"> Bring In Customers. </span>
+              Your Local Colorado
+              <span className="block text-accent"> Web Design Partners</span>
             </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-lg">
-             Done-for-you websites that look amazing and actually grow your
+
+            {/* Hero strapline with controlled wrapping */}
+            <div className="text-4xl lg:text-5xl font-semibold leading-tight">
+              <span className="text-primary-foreground">
+                Beautiful Websites
+              </span>
+              {/* Force a clean break on sm+ so it looks intentional */}
+              <br className="hidden sm:block" />
+              <span className="text-primary-foreground">
+                {/* Keep “That Bring” together so “That” never hangs alone */}
+                {"That\u00A0Bring"} In Customers.
+              </span>
+            </div>
+
+            {/* Supporting paragraph */}
+            <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl">
+              Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
             </p>
           </div>
