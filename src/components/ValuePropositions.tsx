@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  CheckCircle, 
-  Target, 
-  Puzzle, 
-  Shield, 
-  TrendingUp, 
+import {
+  CheckCircle,
+  Target,
+  Puzzle,
+  Zap,          // ★ Added for Quick Turnaround
+  TrendingUp,
   RefreshCw,
-  Heart
+  Heart,
 } from "lucide-react";
 
 const valueProps = [
@@ -14,19 +14,19 @@ const valueProps = [
     icon: CheckCircle,
     title: "Done-For-You, Stress-Free Setup",
     description:
-      "We handle everything from start to launch—design, content, hosting, SEO, and edits—so you don't have to. Designed for busy owners and directors who need a beautiful website without the overwhelm."
+      "We handle everything from start to launch—design, content, hosting, SEO, and edits—so you don't have to. Designed for busy owners and directors who need a beautiful website without the overwhelm.",
   },
   {
     icon: Target,
     title: "Lead-Generating Websites That Work",
     description:
-      "Our websites don't just look great—they're built to bring in new customers through forms, booking widgets, and SEO. Conversion-focused layouts drive calls, signups, and sales automatically."
+      "Our websites don't just look great—they're built to bring in new customers through forms, booking widgets, and SEO. Conversion-focused layouts drive calls, signups, and sales automatically.",
   },
   {
     icon: Heart,
     title: "Local Business with a Personal Touch",
     description:
-      "We're based in Lakewood, CO, and we specialize in working with small businesses across the Front Range. You'll always talk to a real person who knows your name—and your business."
+      "We're based in Lakewood, CO, and we specialize in working with small businesses across the Front Range. You'll always talk to a real person who knows your name—and your business.",
   },
   // If you want to re-enable the “Template-Powered” prop, uncomment below:
   // {
@@ -35,23 +35,26 @@ const valueProps = [
   //   description:
   //     "We use a curated set of high-performing templates tailored to your industry to deliver professional results quickly and affordably. No bloated agency fees or long timelines."
   // },
+
+  // ★ Replaced the old Hosting/Security/Maintenance tile with Quick Turnaround
   {
-    icon: Shield,
-    title: "Hosting, Security & Maintenance Included",
+    icon: Zap,
+    title: "Quick Turnaround — Done in 2 Weeks",
     description:
-      "Every site includes secure hosting, SSL encryption, and ongoing maintenance. No hidden fees. No worries about updates, outages, or broken pages."
+      "Our streamlined build process gets you online fast without cutting corners. Share your logo and content (or let us help), approve preview links, and we handle the rest. Most sites launch in about two weeks once assets are approved.",
   },
+
   {
     icon: TrendingUp,
     title: "Built-In SEO & Performance Tracking",
     description:
-      "Our sites are optimized for local search from day one. We'll track performance and deliver regular reports so you see your ROI clearly."
+      "Our sites are optimized for local search from day one. We'll track performance and deliver regular reports so you see your ROI clearly.",
   },
   {
     icon: RefreshCw,
     title: "Ongoing Edits & Priority Support",
     description:
-      "Monthly plan includes hours of hands-on updates, content swaps, and quick fixes—so your site stays fresh. Need changes? Just email us. We'll handle it."
+      "Monthly plan includes hours of hands-on updates, content swaps, and quick fixes—so your site stays fresh. Need changes? Just email us. We'll handle it.",
   },
 ];
 
