@@ -57,11 +57,15 @@ const Hero = () => {
             </p>
           </div>
 
+          {/* High-contrast CTA */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="hero" className="group" asChild>
-              <Link to="/quote">
+            <Button
+              asChild
+              className="bg-summit-cream text-foreground font-semibold px-6 py-4 rounded-lg shadow-lg hover:bg-summit-cream/90 transition-colors"
+            >
+              <Link to="/quote" className="group inline-flex items-center">
                 Get Your Free Website Quote
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
