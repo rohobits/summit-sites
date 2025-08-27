@@ -1,48 +1,12 @@
 // src/components/Hero.tsx
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-// Import ensures Vite fingerprints & emits a correct URL for your base
-import LogoUrlEmitted from "../assets/Summit_Sites_Logo_Optimized.jpg";
+// Using relative import (works with your alias too if preferred)
+import LogoUrl from "../assets/Summit_Sites_Logo_Optimized.jpg";
 
 const Hero = () => {
-  // 1) Primary: emitted URL from Vite import
-  const primarySrc = LogoUrlEmitted;
-
-  // 2) Retry: cache-busted version (some Safari builds refetch reliably with a query)
-  const bustedSrc = `${LogoUrlEmitted}?v=${Date.now()}`;
-
-  // 3) Last fallback: public path (works if the asset is ever in /public/assets)
-  const publicFallback = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
-
-  const [src, setSrc] = useState<string>(primarySrc);
-  const [attempt, setAttempt] = useState<number>(0);
-  const imgRef = useRef<HTMLImageElement | null>(null);
-
-  useEffect(() => {
-    // On mount, some Safari versions “stall” on first paint.
-    // Forcing a tick helps ensure the image gets a real fetch.
-    const t = requestAnimationFrame(() => {
-      setSrc(primarySrc);
-    });
-    return () => cancelAnimationFrame(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleError = () => {
-    // Gracefully step through our fallbacks
-    setAttempt((prev) => {
-      const next = prev + 1;
-      if (next === 1) {
-        setSrc(bustedSrc); // try cache-busted
-      } else if (next === 2) {
-        setSrc(publicFallback); // try public path variant
-      }
-      return next;
-    });
-  };
-
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -56,32 +20,29 @@ const Hero = () => {
         <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
             <img
-              ref={imgRef}
-              src={src}
+              src={LogoUrl}
               alt="Summit Sites Logo"
               className="w-full h-full object-cover"
-              // Keep it simple for Safari: no decoding/fetchPriority attrs
               loading="eager"
               width={800}
               height={800}
-              onError={handleError}
-              // Uncomment to debug in DevTools:
-              // onLoad={() => console.log("Logo loaded:", src)}
             />
           </div>
         </div>
 
         {/* Left Text Column on desktop, second on mobile */}
-        <div className="order-2 lg:order-1 space-y-8">
+        <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start space-y-8">
           {/* Location pill */}
-          <div className="flex items-center gap-2 text-primary-foreground/90">
+          <div className="flex items-center gap-2 text-primary-foreground/90 justify-center lg:justify-start">
             <MapPin className="w-5 h-5" />
-            <span>Proudly serving Denver &amp; the Front Range</span>
+            <span className="text-center lg:text-left">
+              Proudly serving Denver &amp; the Front Range
+            </span>
           </div>
 
           <div className="space-y-6">
             {/* >>> Main product-focused headline <<< */}
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-center lg:text-left">
               <span className="text-primary-foreground">Beautiful Websites</span>
               <br className="hidden sm:block" />
               <span className="text-primary-foreground">
@@ -90,22 +51,22 @@ const Hero = () => {
             </h1>
 
             {/* Supporting identity subline (smaller) */}
-            <p className="text-xl lg:text-2xl text-accent font-semibold">
+            <p className="text-xl lg:text-2xl text-accent font-semibold text-center lg:text-left">
               Your Local Colorado Web Design Partners
             </p>
 
             {/* Supporting paragraph */}
-            <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl">
+            <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
               Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
             </p>
           </div>
 
           {/* High-contrast CTA */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
             <Button
               asChild
-              className="bg-summit-cream text-foreground font-semibold px-6 py-4 rounded-lg shadow-lg hover:bg-summit-cream/90 transition-colors"
+              className="mx-auto sm:mx-0 bg-summit-cream text-foreground font-semibold px-6 py-4 rounded-lg shadow-lg hover:bg-summit-cream/90 transition-colors"
             >
               <Link to="/quote" className="group inline-flex items-center">
                 Get Your Free Website Quote
@@ -114,7 +75,8 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex items-center gap-6 text-sm text-primary-foreground/80">
+          {/* Checkmarks row */}
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-primary-foreground/80 w-full">
             <div className="flex items-center gap-2">
               ✓ <span>Local Denver Business</span>
             </div>
