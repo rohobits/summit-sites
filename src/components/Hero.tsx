@@ -1,11 +1,48 @@
 // src/components/Hero.tsx
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-// ✅ Import the image so Vite fingerprints and emits the correct URL
-import LogoUrl from "@/assets/Summit_Sites_Logo_Optimized.jpg";
+// Import ensures Vite fingerprints & emits a correct URL for your base
+import LogoUrlEmitted from "../assets/Summit_Sites_Logo_Optimized.jpg";
 
 const Hero = () => {
+  // 1) Primary: emitted URL from Vite import
+  const primarySrc = LogoUrlEmitted;
+
+  // 2) Retry: cache-busted version (some Safari builds refetch reliably with a query)
+  const bustedSrc = `${LogoUrlEmitted}?v=${Date.now()}`;
+
+  // 3) Last fallback: public path (works if the asset is ever in /public/assets)
+  const publicFallback = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
+
+  const [src, setSrc] = useState<string>(primarySrc);
+  const [attempt, setAttempt] = useState<number>(0);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    // On mount, some Safari versions “stall” on first paint.
+    // Forcing a tick helps ensure the image gets a real fetch.
+    const t = requestAnimationFrame(() => {
+      setSrc(primarySrc);
+    });
+    return () => cancelAnimationFrame(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleError = () => {
+    // Gracefully step through our fallbacks
+    setAttempt((prev) => {
+      const next = prev + 1;
+      if (next === 1) {
+        setSrc(bustedSrc); // try cache-busted
+      } else if (next === 2) {
+        setSrc(publicFallback); // try public path variant
+      }
+      return next;
+    });
+  };
+
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -19,15 +56,17 @@ const Hero = () => {
         <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
             <img
-              src={LogoUrl}
+              ref={imgRef}
+              src={src}
               alt="Summit Sites Logo"
               className="w-full h-full object-cover"
+              // Keep it simple for Safari: no decoding/fetchPriority attrs
               loading="eager"
-              fetchPriority="high"
-              decoding="async"
-              // Optional: add intrinsic size if you know it to reduce CLS
-              // width={800}
-              // height={800}
+              width={800}
+              height={800}
+              onError={handleError}
+              // Uncomment to debug in DevTools:
+              // onLoad={() => console.log("Logo loaded:", src)}
             />
           </div>
         </div>
