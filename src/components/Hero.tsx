@@ -1,11 +1,38 @@
 // src/components/Hero.tsx
-import React from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import LogoUrl from "../assets/Summit_Sites_Logo_Optimized.jpg";
+import LogoUrlEmitted from "../assets/Summit_Sites_Logo_Optimized.jpg";
 
 const Hero = () => {
+  // Detect a true page reload (works across modern browsers, including Safari)
+  const isReload = useMemo(() => {
+    const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    return nav?.type === "reload";
+  }, []);
+
+  // Build initial src: cache-bust only on hard reloads
+  const initialSrc = useMemo(
+    () => (isReload ? `${LogoUrlEmitted}?v=${Date.now()}` : LogoUrlEmitted),
+    [isReload]
+  );
+
+  const [src, setSrc] = useState(initialSrc);
+
+  // Optional: if Safari stalled the first fetch, retry once after a tick
+  useEffect(() => {
+    if (!isReload) return;
+    const t = requestAnimationFrame(() => setSrc((s) => s)); // nudge layout on reloads
+    return () => cancelAnimationFrame(t);
+  }, [isReload]);
+
+  // Last-resort fallback: try public path if emitted URL ever errors
+  const handleError = () => {
+    const publicFallback = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
+    if (src !== publicFallback) setSrc(publicFallback);
+  };
+
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -20,12 +47,13 @@ const Hero = () => {
         <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
             <img
-              src={LogoUrl}
+              src={src}
               alt="Summit Sites Logo"
               className="w-full h-full object-cover"
               loading="eager"
               width={800}
               height={800}
+              onError={handleError}
             />
           </div>
         </div>
@@ -42,9 +70,7 @@ const Hero = () => {
             {/* >>> Main product-focused headline <<< */}
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
               <span className="text-primary-foreground">Beautiful Websites</span>
-              {/* Show a line break on sm+; always include a space for xs */}
-              <br className="hidden sm:block" />
-              {" "}
+              <br className="hidden sm:block" />{" "}
               <span className="text-primary-foreground">
                 {"That\u00A0Bring"} In Customers.
               </span>
