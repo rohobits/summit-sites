@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-// Using relative import (works with your alias too if preferred)
 import LogoUrl from "../assets/Summit_Sites_Logo_Optimized.jpg";
 
 const Hero = () => {
@@ -15,7 +14,8 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-24 -translate-x-24" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      {/* Center items on mobile; keep layout on desktop */}
+      <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center justify-items-center lg:justify-items-stretch">
         {/* Right Logo on desktop, first on mobile */}
         <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
@@ -31,32 +31,32 @@ const Hero = () => {
         </div>
 
         {/* Left Text Column on desktop, second on mobile */}
-        <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start space-y-8">
+        <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left">
           {/* Location pill */}
           <div className="flex items-center gap-2 text-primary-foreground/90 justify-center lg:justify-start">
             <MapPin className="w-5 h-5" />
-            <span className="text-center lg:text-left">
-              Proudly serving Denver &amp; the Front Range
-            </span>
+            <span>Proudly serving Denver &amp; the Front Range</span>
           </div>
 
           <div className="space-y-6">
             {/* >>> Main product-focused headline <<< */}
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-center lg:text-left">
+            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
               <span className="text-primary-foreground">Beautiful Websites</span>
+              {/* Show a line break on sm+; always include a space for xs */}
               <br className="hidden sm:block" />
+              {" "}
               <span className="text-primary-foreground">
                 {"That\u00A0Bring"} In Customers.
               </span>
             </h1>
 
             {/* Supporting identity subline (smaller) */}
-            <p className="text-xl lg:text-2xl text-accent font-semibold text-center lg:text-left">
+            <p className="text-xl lg:text-2xl text-accent font-semibold">
               Your Local Colorado Web Design Partners
             </p>
 
             {/* Supporting paragraph */}
-            <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+            <p className="text-lg lg:text-xl text-primary-foreground/90 max-w-xl mx-auto lg:mx-0">
               Done-for-you websites that look amazing and actually grow your
               business. No stress, no technical headaches—just results.
             </p>
