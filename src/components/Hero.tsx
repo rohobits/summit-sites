@@ -2,11 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+// ✅ Import the image so Vite fingerprints and emits the correct URL
+import LogoUrl from "@/assets/Summit_Sites_Logo_Optimized.jpg";
 
 const Hero = () => {
-  // relative to the <base href> in index.html
-  const logoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_Logo_Optimized.jpg`;
-
   return (
     <section className="relative bg-gradient-hero text-primary-foreground py-20 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -20,9 +19,15 @@ const Hero = () => {
         <div className="order-1 lg:order-2 lg:justify-self-end flex justify-center">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md aspect-square rounded-full overflow-hidden mx-auto">
             <img
-              src={logoSrc}
+              src={LogoUrl}
               alt="Summit Sites Logo"
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              // Optional: add intrinsic size if you know it to reduce CLS
+              // width={800}
+              // height={800}
             />
           </div>
         </div>
