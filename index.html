@@ -8,28 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Summit Sites</title>
 
-    <!--
-      Preload the hero logo using Vite's module graph so the correct
-      hashed URL is used in every build (fixes Safari first-load issue).
-      This runs before the app mounts.
-    -->
-    <script type="module">
-      import LogoUrl from './src/assets/Summit_Sites_Logo_Optimized.jpg';
-
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'image';
-      link.href = LogoUrl;
-
-      // Optional: give Safari every hint we can
-      link.fetchPriority = 'high';
-
-      document.head.appendChild(link);
-    </script>
+    <!-- Preload logo from public/ so Safari has it on first paint AND refresh.
+         Because of <base>, "assets/..." resolves to "%BASE_URL%assets/..." -->
+    <link rel="preload" as="image" href="assets/Summit_Sites_Logo_Optimized.jpg" />
   </head>
   <body>
     <div id="root"></div>
-
     <!-- Your app entry -->
     <script type="module" src="./src/main.tsx"></script>
   </body>
