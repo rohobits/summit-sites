@@ -20,8 +20,8 @@ const CtaSection = () => {
               Homeowners Google their problem before they call anyone. If your business isn't showing up, someone else is getting that job. Let's fix that with a professional site built to win work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact">
-                <Button className="bg-white text-summit-forest hover:bg-white/90 py-6 px-8 text-lg flex items-center gap-2">
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-white text-summit-forest hover:bg-white/90 py-6 px-8 text-lg flex items-center justify-center gap-2">
                   Get Your Free Consultation <ArrowRight size={18} />
                 </Button>
               </a>

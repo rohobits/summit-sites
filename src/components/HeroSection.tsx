@@ -22,13 +22,13 @@ const HeroSection = () => {
               We build professional websites for electricians, plumbers, HVAC companies, roofers, and other trade businesses that do great work but need a better online presence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a href="#contact">
-                <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center justify-center gap-2">
                   Get a Free Consultation <ArrowRight size={18} />
                 </Button>
               </a>
-              <a href="#services">
-                <Button variant="outline" className="border-summit-forest text-summit-forest hover:bg-summit-forest/10 py-6 px-8 text-lg">
+              <a href="#services" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full sm:w-auto border-summit-forest text-summit-forest hover:bg-summit-forest/10 py-6 px-8 text-lg">
                   See Our Services
                 </Button>
               </a>

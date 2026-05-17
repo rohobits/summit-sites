@@ -58,7 +58,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg">Phone</h4>
-                  <p className="text-summit-dark">(555) 123-4567</p>
+                  <p className="text-summit-dark">(983) 213-4891</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -70,7 +70,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg">Email</h4>
-                  <p className="text-summit-dark">hello@summitsites.com</p>
+                  <p className="text-summit-dark">contact@summitsites.co</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -82,7 +82,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg">Location</h4>
-                  <p className="text-summit-dark">Boulder, Colorado</p>
+                  <p className="text-summit-dark">Lakewood, CO</p>
                 </div>
               </div>
             </div>

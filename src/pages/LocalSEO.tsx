@@ -50,16 +50,16 @@ const LocalSEO = () => {
               <p className="text-summit-dark text-lg mb-8 max-w-2xl">
                 When someone in your area searches "plumber near me" or "best HVAC company," we make sure your business shows up at the top — not your competitors.
               </p>
-              <a href="#contact">
-                <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center justify-center gap-2">
                   Get a Free SEO Audit <ArrowRight size={18} />
                 </Button>
               </a>
             </div>
             <div className="flex-1 relative">
               <img
-                src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80"
-                alt="Local search results on a phone"
+                src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80"
+                alt="Google search results on a laptop"
                 className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-summit-light">

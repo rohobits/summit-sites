@@ -50,8 +50,8 @@ const LeadGeneration = () => {
               <p className="text-summit-dark text-lg mb-8 max-w-2xl">
                 We build quote forms, click-to-call buttons, and service pages that convert homeowners into paying customers — even while you're on the job site.
               </p>
-              <a href="#contact">
-                <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
+              <a href="#contact" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center justify-center gap-2">
                   Get a Free Consultation <ArrowRight size={18} />
                 </Button>
               </a>
