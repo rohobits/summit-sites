@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="mb-4">
-              <img src="/logo.png" alt="Summit Sites" className="h-12 w-auto" />
+              <img src="/logo.png" alt="Summit Sites" className="h-[84px] w-auto" />
             </div>
             <p className="text-summit-dark">
               Web design for trade contractors who do great work and deserve a website that wins them more jobs.
