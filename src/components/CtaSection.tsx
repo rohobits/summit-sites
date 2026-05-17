@@ -25,11 +25,6 @@ const CtaSection = () => {
                   Get Your Free Consultation <ArrowRight size={18} />
                 </Button>
               </a>
-              <a href="#testimonials">
-                <Button variant="outline" className="border-white text-white hover:bg-white/10 py-6 px-8 text-lg">
-                  See Client Results
-                </Button>
-              </a>
             </div>
           </div>
         </div>

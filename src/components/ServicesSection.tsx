@@ -18,14 +18,14 @@ const services = [
     title: "Lead Generation & Quote Forms",
     description: "Capture more jobs with online quote request forms, click-to-call buttons, and service pages that convert.",
     feature: "More calls. More booked jobs.",
-    link: "#contact"
+    link: "/lead-generation"
   },
   {
     icon: <MapPin className="h-10 w-10 text-summit-forest" />,
     title: "Local SEO & Google Rankings",
     description: "Get your business to the top of Google when homeowners in your area search for your trade. We handle the technical work.",
     feature: "Rank for 'best electrician in [your city]'",
-    link: "#contact"
+    link: "/local-seo"
   }
 ];
 

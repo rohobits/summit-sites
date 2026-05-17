@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Monitor, Palette, Globe, Smartphone, Layers } 
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
 
 const DesignFeatures = [
   {
@@ -51,7 +52,7 @@ const WebsiteDesign = () => {
                 HVAC companies, roofers, and other trade businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/#contact">
+                <a href="#contact">
                   <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
                     Get a Free Consultation <ArrowRight size={18} />
                   </Button>
@@ -154,9 +155,9 @@ const WebsiteDesign = () => {
               </ol>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-lg border border-summit-light">
-              <img 
-                src="https://images.unsplash.com/photo-1517247864542-6226ab25a9bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Design process" 
+              <img
+                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+                alt="Design process — team reviewing website mockups"
                 className="rounded-xl w-full h-96 object-cover"
               />
             </div>
@@ -221,7 +222,7 @@ const WebsiteDesign = () => {
               Let's build a site that works as hard as you do — bringing in steady leads and booked jobs for your trade business.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="/#contact">
+              <a href="#contact">
                 <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg">
                   Schedule Your Free Consultation
                 </Button>
@@ -231,6 +232,7 @@ const WebsiteDesign = () => {
         </div>
       </section>
 
+      <ContactSection />
       <Footer />
     </div>
   );
