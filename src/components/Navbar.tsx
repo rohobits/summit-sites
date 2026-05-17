@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,16 +23,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/lovable-uploads/dffd4ba1-5d64-4c01-ad02-153fb71467c5.png" alt="Summit Sites Logo" className="h-10 w-10" />
+        <a href="/" className="flex items-center gap-2">
+          <img src="/favicon.png" alt="Summit Sites Logo" className="h-10 w-10" />
           <span className="font-bold text-xl text-summit-forest">Summit Sites</span>
-        </Link>
-        
+        </a>
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
-          <a href="#services" className="text-summit-forest hover:text-summit-dark font-medium transition">Services</a>
-          <a href="#testimonials" className="text-summit-forest hover:text-summit-dark font-medium transition">Testimonials</a>
-          <a href="#contact">
+          <a href="/#services" className="text-summit-forest hover:text-summit-dark font-medium transition">Services</a>
+          <a href="/#testimonials" className="text-summit-forest hover:text-summit-dark font-medium transition">Testimonials</a>
+          <a href="/#contact">
             <Button className="bg-summit-forest hover:bg-summit-forest/90">Contact Us</Button>
           </a>
         </nav>
@@ -52,21 +51,21 @@ const Navbar = () => {
         <div className="md:hidden bg-summit-cream shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <a
-              href="#services"
+              href="/#services"
               className="text-summit-forest hover:text-summit-dark font-medium transition py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </a>
             <a
-              href="#testimonials"
+              href="/#testimonials"
               className="text-summit-forest hover:text-summit-dark font-medium transition py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Testimonials
             </a>
-            <a 
-              href="#contact"
+            <a
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
             >
               <Button className="bg-summit-forest hover:bg-summit-forest/90 w-full">Contact Us</Button>
