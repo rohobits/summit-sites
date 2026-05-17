@@ -23,9 +23,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <a href="/" className="flex items-center gap-2">
-          <img src="/favicon.png" alt="Summit Sites Logo" className="h-10 w-10" />
-          <span className="font-bold text-xl text-summit-forest">Summit Sites</span>
+        <a href="/">
+          <img src="/logo.png" alt="Summit Sites" className="h-12 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
