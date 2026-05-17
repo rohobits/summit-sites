@@ -20,24 +20,26 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const res = await fetch("https://formspree.io/f/xaqkyqak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+        setFormData({ name: "", email: "", business: "", message: "" });
+      } else {
+        toast({ title: "Something went wrong", description: "Please try again or email us directly at contact@summitsites.co" });
+      }
+    } catch {
+      toast({ title: "Something went wrong", description: "Please try again or email us directly at contact@summitsites.co" });
+    } finally {
       setIsSubmitting(false);
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        business: "",
-        message: ""
-      });
-    }, 1000);
+    }
   };
 
   return (
