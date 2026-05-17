@@ -24,7 +24,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <a href="/">
-          <img src="/logo.png" alt="Summit Sites" className="h-16 w-auto" />
+          <img src="/logo.png" alt="Summit Sites" className="h-[74px] w-auto" />
         </a>
 
         {/* Desktop Navigation */}
