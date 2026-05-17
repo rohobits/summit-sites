@@ -20,12 +20,16 @@ const CtaSection = () => {
               Homeowners Google their problem before they call anyone. If your business isn't showing up, someone else is getting that job. Let's fix that with a professional site built to win work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-white text-summit-forest hover:bg-white/90 py-6 px-8 text-lg flex items-center gap-2">
-                Get Your Free Consultation <ArrowRight size={18} />
-              </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 py-6 px-8 text-lg">
-                See Our Work
-              </Button>
+              <a href="#contact">
+                <Button className="bg-white text-summit-forest hover:bg-white/90 py-6 px-8 text-lg flex items-center gap-2">
+                  Get Your Free Consultation <ArrowRight size={18} />
+                </Button>
+              </a>
+              <a href="#testimonials">
+                <Button variant="outline" className="border-white text-white hover:bg-white/10 py-6 px-8 text-lg">
+                  See Client Results
+                </Button>
+              </a>
             </div>
           </div>
         </div>

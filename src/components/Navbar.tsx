@@ -32,7 +32,6 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
           <a href="#services" className="text-summit-forest hover:text-summit-dark font-medium transition">Services</a>
-          <a href="#portfolio" className="text-summit-forest hover:text-summit-dark font-medium transition">Portfolio</a>
           <a href="#testimonials" className="text-summit-forest hover:text-summit-dark font-medium transition">Testimonials</a>
           <a href="#contact">
             <Button className="bg-summit-forest hover:bg-summit-forest/90">Contact Us</Button>
@@ -52,22 +51,15 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-summit-cream shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="text-summit-forest hover:text-summit-dark font-medium transition py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </a>
-            <a 
-              href="#portfolio" 
-              className="text-summit-forest hover:text-summit-dark font-medium transition py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Portfolio
-            </a>
-            <a 
-              href="#testimonials" 
+            <a
+              href="#testimonials"
               className="text-summit-forest hover:text-summit-dark font-medium transition py-2"
               onClick={() => setMobileMenuOpen(false)}
             >

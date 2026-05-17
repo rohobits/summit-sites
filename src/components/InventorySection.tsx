@@ -61,9 +61,11 @@ const LeadGenSection = () => {
               </ul>
             </div>
 
-            <Button className="w-full sm:w-auto bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2 mt-2">
-              Get Your Free Site Plan <ArrowRight size={18} />
-            </Button>
+            <a href="#contact">
+              <Button className="w-full sm:w-auto bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2 mt-2">
+                Get Your Free Site Plan <ArrowRight size={18} />
+              </Button>
+            </a>
           </div>
         </div>
 

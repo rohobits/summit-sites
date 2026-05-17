@@ -51,12 +51,11 @@ const WebsiteDesign = () => {
                 HVAC companies, roofers, and other trade businesses.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
-                  Get a Free Consultation <ArrowRight size={18} />
-                </Button>
-                <Button variant="outline" className="border-summit-forest text-summit-forest hover:bg-summit-forest hover:text-white py-6 px-8 text-lg">
-                  View Portfolio
-                </Button>
+                <a href="/#contact">
+                  <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg flex items-center gap-2">
+                    Get a Free Consultation <ArrowRight size={18} />
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="flex-1 relative">
@@ -222,12 +221,11 @@ const WebsiteDesign = () => {
               Let's build a site that works as hard as you do — bringing in steady leads and booked jobs for your trade business.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg">
-                Schedule Your Free Consultation
-              </Button>
-              <Button variant="outline" className="border-summit-forest text-summit-forest hover:bg-summit-forest hover:text-white py-6 px-8 text-lg">
-                View Our Portfolio
-              </Button>
+              <a href="/#contact">
+                <Button className="bg-summit-forest hover:bg-summit-forest/90 text-white py-6 px-8 text-lg">
+                  Schedule Your Free Consultation
+                </Button>
+              </a>
             </div>
           </div>
         </div>
