@@ -1,125 +1,78 @@
-@import "@/styles/globals.css"; /* Adjust path based on your folder structure */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Mountain-inspired color palette */
-    --background: 42 15% 95%;
-    --foreground: 156 100% 8%;
+    --background: 48 43% 93%;
+    --foreground: 146 73% 14%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 156 100% 8%;
+    --card: 48 43% 93%;
+    --card-foreground: 146 73% 14%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 156 100% 8%;
+    --popover: 48 43% 93%;
+    --popover-foreground: 146 73% 14%;
 
-    --primary: 156 100% 15%;
-    --primary-foreground: 42 15% 95%;
+    --primary: 146 73% 14%;
+    --primary-foreground: 48 43% 93%;
 
-    --secondary: 42 25% 88%;
-    --secondary-foreground: 156 100% 8%;
+    --secondary: 60 9% 98%;
+    --secondary-foreground: 146 73% 14%;
 
-    --muted: 42 20% 92%;
-    --muted-foreground: 156 20% 45%;
+    --muted: 60 6% 65%;
+    --muted-foreground: 146 73% 14%;
 
-    --accent: 25 50% 85%;
-    --accent-foreground: 156 100% 15%;
+    --accent: 60 15% 80%;
+    --accent-foreground: 146 73% 14%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 48 43% 93%;
 
-    --border: 42 20% 85%;
-    --input: 42 20% 88%;
-    --ring: 156 100% 15%;
-
-    /* Custom Summit Sites tokens */
-    --summit-green: 156 100% 15%;
-    --summit-green-light: 156 50% 25%;
-    --summit-cream: 42 25% 92%;
-    --summit-earth: 25 40% 75%;
-    
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--summit-green)), hsl(var(--summit-green-light)));
-    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--summit-cream)));
-    
-    /* Shadows */
-    --shadow-summit: 0 10px 40px -10px hsl(var(--summit-green) / 0.15);
-    --shadow-card: 0 4px 20px -4px hsl(var(--summit-green) / 0.1);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border: 60 9% 70%;
+    --input: 60 9% 70%;
+    --ring: 146 73% 14%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-summit-cream text-summit-forest font-sans;
+  }
+
+  .custom-shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .mountain-divider {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .mountain-divider::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 50%, #0A4022 50%),
+                linear-gradient(225deg, transparent 50%, #0A4022 50%);
+    background-size: 50px 100px;
+    background-position: 0 0, 25px 0;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-summit-forest to-summit-dark;
   }
 }

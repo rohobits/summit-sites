@@ -1,77 +1,87 @@
-// src/components/Footer.tsx
-import { MapPin, Mail } from "lucide-react";
+
+import React from "react";
+import { Zap } from "lucide-react";
 
 const Footer = () => {
-  // resolves to "/" in dev or "/summit-sites/" in production
-  const bwLogoSrc = `${import.meta.env.BASE_URL}assets/Summit_Sites_bw.png`;
-
   return (
-    <footer className="bg-foreground text-background py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* 3-column grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <footer className="bg-summit-cream py-16 border-t border-summit-light">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <img src="/lovable-uploads/dffd4ba1-5d64-4c01-ad02-153fb71467c5.png" alt="Summit Sites Logo" className="h-10 w-10" />
+              <span className="font-bold text-xl text-summit-forest">Summit Sites</span>
+            </div>
+            <p className="text-summit-dark mb-6">
+              Web design for trade contractors who do great work and deserve a website that wins them more jobs.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="bg-summit-light/50 hover:bg-summit-light p-2 rounded-full transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-summit-forest">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" className="bg-summit-light/50 hover:bg-summit-light p-2 rounded-full transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-summit-forest">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="#" className="bg-summit-light/50 hover:bg-summit-light p-2 rounded-full transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-summit-forest">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
           
-          {/* Logo only */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="w-48 h-48 rounded-full overflow-hidden">
-              <img
-                src={bwLogoSrc}
-                alt="Summit Sites Logo"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Contact Info</h4>
-            <div className="space-y-3 text-background/80">
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>support@summitsites.co</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span>
-                  Lakewood, CO
-                  <br />
-                  Serving the Front Range
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Services</h4>
-            <ul className="space-y-2 text-background/80 list-none">
-              <li>• Website Design & Development</li>
-              <li>• SEO & Local Search</li>
-              <li>• Hosting & Maintenance</li>
-              <li>• Content Creation</li>
-              <li>• Ongoing Support</li>
-              <li>• Done-for-you Newsletters</li>
+          <div>
+            <h3 className="font-bold text-lg mb-4">Services</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Custom Website Design</a></li>
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Lead Generation & Quote Forms</a></li>
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Local SEO & Google Rankings</a></li>
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Service Area Pages</a></li>
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Website Maintenance</a></li>
             </ul>
           </div>
+          
+          <div>
+            <h3 className="font-bold text-lg mb-4">Company</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">About Us</a></li>
+              <li><a href="#portfolio" className="text-summit-dark hover:text-summit-forest transition">Our Work</a></li>
+              <li><a href="#" className="text-summit-dark hover:text-summit-forest transition">Blog</a></li>
+              <li><a href="#testimonials" className="text-summit-dark hover:text-summit-forest transition">Testimonials</a></li>
+              <li><a href="#contact" className="text-summit-dark hover:text-summit-forest transition">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-bold text-lg mb-4">Newsletter</h3>
+            <p className="text-summit-dark mb-4">Subscribe to get tips on growing your trade business online.</p>
+            <form className="flex gap-2">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="flex-1 px-3 py-2 rounded-lg border border-summit-light focus:outline-none focus:ring-2 focus:ring-summit-forest"
+              />
+              <button type="submit" className="bg-summit-forest text-white px-4 py-2 rounded-lg hover:bg-summit-forest/90 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m5 12 14 0"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
-
-        {/* Bottom Links */}
-        <div className="border-t border-background/20 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-background/60 text-sm">
-              © 2025 Summit Sites. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm text-background/60">
-              <a href="#" className="hover:text-background transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-background transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-background transition-colors">
-                Site Map
-              </a>
-            </div>
+        
+        <div className="pt-8 border-t border-summit-light flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-summit-dark text-sm">© {new Date().getFullYear()} Summit Sites. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="text-sm text-summit-dark hover:text-summit-forest transition">Privacy Policy</a>
+            <a href="#" className="text-sm text-summit-dark hover:text-summit-forest transition">Terms of Service</a>
           </div>
         </div>
       </div>
