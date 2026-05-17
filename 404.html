@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Refresh" content="0; url=/" />
+    <meta charset="utf-8" />
+    <title>Summit Sites</title>
+    <script>
+      // SPA redirect for GitHub Pages — encodes the full path into a query
+      // string so index.html can restore it before React Router initialises.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host + '/?/' +
+        l.pathname.slice(1).replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
   </head>
   <body></body>
 </html>
